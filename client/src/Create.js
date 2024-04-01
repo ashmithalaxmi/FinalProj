@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Create() {
   const [emailID, setEmailID] = useState("");
@@ -28,77 +28,93 @@ function Create() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Create User</h1>
-      </header>
+        <h1>Create New User</h1>
       <form onSubmit={handleSubmit} className="user-form">
-      <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
+        <center>
+          <table>  
+          <div className="form-group">
+          <tr>
+          <td><label htmlFor="email">Email:</label></td>
+          <td><input
             type="email"
             id="email"
             name="email"
             value={emailID}
             onChange={e => setEmailID(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
         <div className="form-group">
-          <label htmlFor="fullName">Full Name:</label>
-          <input
+          <tr>
+          <td><label htmlFor="fullName">Full Name:</label></td>
+          <td><input
             type="text"
             id="fullName"
             name="fullName"
             value={fullName}
             onChange={e => setfullName(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
+          <tr>
+          <td><label htmlFor="username">Username:</label></td>
+          <td><input
             type="text"
             id="username"
             name="username"
             value={username}
             onChange={e=>setusername(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
         <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <input
+          <tr>
+          <td><label htmlFor="phoneNumber">Phone Number:</label></td>
+          <td><input
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
             value={phoneNumber}
             onChange={e=>setphoneNumber(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
         <div className="form-group">
-          <label htmlFor="department">Department:</label>
-          <input
+          <tr>
+          <td><label htmlFor="department">Department:</label></td>
+          <td><input
             type="text"
             id="department"
             name="department"
             value={department}
             onChange={e=>setdepartment(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
         <div className="form-group">
-          <label htmlFor="role">Role:</label>
-          <input
+          <tr>
+          <td><label htmlFor="role">Role:</label></td>
+          <td><input
             type="text"
             id="role"
             name="role"
             value={role}
             onChange={e => setrole(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
-        <button type="submit">Create</button>
+        <tr>
+        <td><button type="submit">Create</button></td>
+        </tr>
+        </table>
+        </center>
       </form>
     </div>
   );

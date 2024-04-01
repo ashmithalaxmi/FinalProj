@@ -37,38 +37,49 @@ function Login() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Login</h1>
-      </header>
+        <h1>Admin  Login</h1>
       <form onSubmit={handleSubmit} className="login-form">
+      <center>
+        <table>
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
+          <tr>
+          <td><label htmlFor="email">Email:</label></td>
+          <td><input
             type="email"
             id="email"
             name="email"
             value={emailID}
             onChange={e => setEmailID(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
+          <tr>
+          <td><label htmlFor="password">Password:</label></td>
+          <td><input
             type="password"
             id="password"
             name="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
-          />
+          /></td>
+          </tr>
         </div>
-        <button type="submit">Login</button>
+        <tr>
+        <td><button type="submit">Login</button></td>
+        </tr>
+        <tr>
+        <td><button onClick={() => {
+          onForgetClicked();
+        }}>Forget pw</button></td>
+        </tr>
+        </table>
+        </center>
       </form>
 
-      <button onClick={() => {
-          onForgetClicked();
-        }}>Forget pw</button>
+      
     </div>
   );
 }

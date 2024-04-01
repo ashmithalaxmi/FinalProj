@@ -32,13 +32,13 @@ app.get('/sendmail',async (req,res)=>{
     port: 587,
     secure: false,
     auth: {
-      user: "nadiminti@jmangroup.com",  // Replace with your email
+      user: "ashmithalaxmi@jmangroup.com",  // Replace with your email
       pass: "Jman@600113"
     }
   });
   
   const mailOptions = {
-    from: "nadiminti@jmangroup.com",
+    from: "ashmithalaxmi@jmangroup.com",
     to: requestingUser,
     subject: 'Login Successful',
     text: `change password here: ${link}`
@@ -60,7 +60,6 @@ app.get('/api/users/first', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { emailID, password } = req.body;
     console.log(req.body)
-    // username="deeps"
     try {
       const user = await User.findOne({ emailID });
       console.log(user);
